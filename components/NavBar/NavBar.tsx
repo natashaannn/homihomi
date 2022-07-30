@@ -1,23 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import AppBar from '@mui/material/AppBar'
-import Toolbar from '@mui/material/Toolbar'
-import IconButton from '@mui/material/IconButton'
-import Typography from '@mui/material/Typography'
-import Menu from '@mui/icons-material/Menu'
 import Box from '@mui/material/Box'
-import { useState } from 'react'
+import IconButton from '@mui/material/IconButton'
+import Menu from '@mui/icons-material/Menu'
+import Toolbar from '@mui/material/Toolbar'
+import Typography from '@mui/material/Typography'
 
+import { Page } from 'types/types'
 import HamburgerMenu from './HamburgerMenu'
-import Button from '@mui/material/Button'
-
-import { Page } from '@global/types'
+import PageLinks from './PageLinks'
 import SearchBar from './SearchBar'
 
 type Props = {
+    appName: string;
     pages: Page[];
 }
 
-function NavBar({ pages }: Props) {
+function NavBar({ appName, pages }: Props) {
     // hamburger menu functions
     const [anchorElNav, setanchorElNav] = useState<null | HTMLElement>(null)
 
@@ -42,7 +41,7 @@ function NavBar({ pages }: Props) {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="fixed" color="transparent">
+        <AppBar position="static" color="transparent">
             <Toolbar>
             <IconButton 
             edge="start" 
@@ -59,32 +58,13 @@ function NavBar({ pages }: Props) {
                 <Menu />
             </IconButton>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                HomiHomi
+                { appName }
             </Typography>
             <SearchBar 
                 searchQuery={searchQuery} 
                 handleChange={handleSearchQueryChange} 
                 onClick={handleClickSearch} />
-            <Box             
-            sx={{
-                display: {
-                    xs: 'none',
-                    md: 'flex',
-                    lg: 'flex'
-                }
-            }}>
-            { pages.map( (page) => (
-                <Button 
-                variant="text" 
-                color="primary" 
-                key={page.title} 
-                href={page.link}
-                >
-                {page.title}
-                </Button>
-            ))}
-            </Box>
-
+            <PageLinks pages={ pages } />
             </Toolbar>
 
             <HamburgerMenu 

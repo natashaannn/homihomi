@@ -18,9 +18,12 @@
     "paths": {
       "@components/*": ["components/*"],
       "@pages/*": ["pages/*"],
-      "@global/*": ["global/*"],
-    }
+      "@types/*": ["types/*"],
+    },
+    "types": [
+      "facebook-js-sdk"
+    ]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "jest.config.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "jest.config.js", "server.js"],
   "exclude": ["node_modules"]
 }

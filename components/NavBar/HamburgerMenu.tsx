@@ -1,6 +1,6 @@
 import React from 'react'
 import Menu from '@mui/material/Menu'
-import { Page } from '@global/types'
+import { Page } from 'types/types'
 import MenuItem from '@mui/material/MenuItem'
 import Link from '@mui/material/Link'
 
