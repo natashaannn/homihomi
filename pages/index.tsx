@@ -64,7 +64,7 @@ const Home: NextPage = () => {
         }}
       >
       {response ? response.data.map( (listing) => (
-        <Grid item xs={6} md={4} lg={2}>
+        <Grid item xs={6} md={4} lg={2} key={listing.id}>
           <ListingCard listing={listing} />
         </Grid>
       )) :
