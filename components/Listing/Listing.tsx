@@ -3,10 +3,10 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 
-import { Listing } from 'types/types'
+import { Post } from 'types/types'
 
 type Props = {
-    listing: Listing
+    listing: Post
 }
 
 function ListingCard({ listing }: Props) {

@@ -1,11 +1,12 @@
-import { Page, ApiResponse, Post } from 'types/types'
 import { useEffect, useState } from 'react'
+import type { NextPage } from 'next'
 import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'
 import ListingCard from '@components/Listing/Listing'
 import NavBar from '@components/NavBar/NavBar'
-import type { NextPage } from 'next'
 import Typography from '@mui/material/Typography'
+
+import { Page, ApiResponse, Post } from 'types/types'
 
 const pages: Page[] = [
   {
@@ -17,10 +18,6 @@ const pages: Page[] = [
     link: '/about'
   },
 ]
-
-type Props = {
-  response: ApiResponse;
-}
 
 const Home: NextPage = () => {
   const [apiResponse, setApiResponse] = useState<ApiResponse>({})
