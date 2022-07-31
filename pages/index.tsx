@@ -22,6 +22,8 @@ const pages: Page[] = [
 const Home: NextPage = () => {
   const [apiResponse, setApiResponse] = useState<ApiResponse>({})
 
+  console.log(apiResponse)
+
   useEffect(() => {
     window.fbAsyncInit = function() {
       window.FB.init({ 
@@ -35,11 +37,11 @@ const Home: NextPage = () => {
         '/618676662914902/feed',
         'get',
         {
-          access_token : 'EAAGYnlSGdK8BADTTeSiTckUaAm5a2QifF6pBsgpZAidSGke9wlbECyBZCLZAuotieNjDEZCMpx5RHkBRqWzb09XIHMZAMLGHgSW8ZC8ZAuZC38IXdFeVLruVjyWk3XFRRUPoSAkvGZCCLFcs8iMrxzZCsbTDU0zCEhHPPWE0BBenqtYwZDZD'
+          access_token : 'EAAGYnlSGdK8BAGzdFuOF7eexEpZCTUNqyllMWAHP61sLDxuAzHXkE1qUGEuJvbDZAlsZC7ZCLAbre46cv8SG3wjQQkx5ZA3V6k40CQkw3k8oZA2YTNKH4BXZBDi9AfsyhY5KjIBLwMCw1OBFxKUXopkHarkV0oAv1cBexuJcxughZAvyooo64sp3'
         },
         function(response: ApiResponse) {
           if (!response || response.error) {
-            console.log(!response ? 'error occured' : response.error)
+            console.log(response)
           } else {
             setApiResponse(response)
             console.log(response)
