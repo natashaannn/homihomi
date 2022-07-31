@@ -20,7 +20,7 @@
       "@pages/*": ["pages/*"],
       "@types/*": ["types/*"],
     },
-    "types": [
+    "types": [ 
       "facebook-js-sdk"
     ]
   },
