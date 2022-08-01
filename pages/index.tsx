@@ -27,19 +27,17 @@ const Home: NextPage = () => {
   useEffect(() => {
     window.fbAsyncInit = function() {
       window.FB.init({ 
-        appId: process.env.FB_TEST_APP_ID,
+        appId: process.env.NEXT_PUBLIC_FB_TEST_APP_ID,
         autoLogAppEvents : true,
         status: true,
         version: 'v14.0'
       });
 
-      // authenticate fb function
-
       FB.api(
         '/618676662914902/feed',
         'get',
         {
-          access_token: process.env.FB_ACCESS_TOKEN        
+          access_token: process.env.NEXT_PUBLIC_FB_ACCESS_TOKEN        
         },
         function(response: ApiResponse) {
           if (!response || response.error) {
