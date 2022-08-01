@@ -27,7 +27,7 @@ const Home: NextPage = () => {
   useEffect(() => {
     window.fbAsyncInit = function() {
       window.FB.init({ 
-        appId: '3201391683461364',
+        appId: process.env.FB_TEST_APP_ID,
         autoLogAppEvents : true,
         status: true,
         version: 'v14.0'
@@ -39,7 +39,7 @@ const Home: NextPage = () => {
         '/618676662914902/feed',
         'get',
         {
-          access_token: 'EAAtfphYUYPQBAKcjAViu0hq1ZA5GDKzRnSI2x05H3zkeIdbYxTWxkCZCIZCq6zVVnONuBbWr6A0Kzw54PfTsQO8Kvyv1HRelcTjX1hZClOlpYsdOr5jZCrYeTmSXpI0GM2SJZBfxIAlpkmsQr7ZCA64iep6ZAAYk5oekS7a93IJ3ygZDZD'        
+          access_token: process.env.FB_ACCESS_TOKEN        
         },
         function(response: ApiResponse) {
           if (!response || response.error) {
