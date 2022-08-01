@@ -27,19 +27,19 @@ const Home: NextPage = () => {
   useEffect(() => {
     window.fbAsyncInit = function() {
       window.FB.init({ 
-        appId: '449280767063215',
+        appId: '3201391683461364',
         autoLogAppEvents : true,
         status: true,
         version: 'v14.0'
       });
 
+      // authenticate fb function
+
       FB.api(
         '/618676662914902/feed',
         'get',
         {
-
-          // access_token : 'EAAGYnlSGdK8BAE1ndTC82Oo7UCqKZCZBaf5d27gXK0hGIYTfHSghQZAVVGGyyRZAZBrT8cRZApZCk88VvSdR6TE7ASUALKO6Tu8SOBQjqoCeMzRH28eLGZAazMINLnlttaPP7PY42ZAKJUmbIG0diCo9IlKcjFQD8WZCITg0BfIGnYIz7zCTkwaGmk'
-          access_token: 'EAAGYnlSGdK8BALT1vRKp0r7fCMXgZCTladaMYIur4yUxllSiNMZCurR3LojUdQFMjk51PmD4mAC6aBMY3iT9ER7eqztYeuG8BHtwbZA1ZCE9XZAJdRv4QVonDhvSCrMPYsnBvjFBtZA9xWj1LG0ZAp8fy1LJ0yQgVdp8ZCREN8X0GN2qZBFentWrZCQkEZA1ulpth7A4ZB6nI0jcJ0Rzferpdq7TQnJuZARHqt8ZAcqSFHdgVQo1BQkVURZBhzw'        
+          access_token: 'EAAtfphYUYPQBAKcjAViu0hq1ZA5GDKzRnSI2x05H3zkeIdbYxTWxkCZCIZCq6zVVnONuBbWr6A0Kzw54PfTsQO8Kvyv1HRelcTjX1hZClOlpYsdOr5jZCrYeTmSXpI0GM2SJZBfxIAlpkmsQr7ZCA64iep6ZAAYk5oekS7a93IJ3ygZDZD'        
         },
         function(response: ApiResponse) {
           if (!response || response.error) {
